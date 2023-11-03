@@ -8,23 +8,36 @@ ui <- dashboardPage(
     title = "AppCovid Check"
   ),
   # Barra lateral
-  dashboardSidebar(),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Home", tabName = "home"),
+      menuItem("Help", tabName = "help"),
+      menuItem("Desenvolvedores", tabName = "Dev"),
+      menuItem("Contato", tabName = "Contact")
+    )
+  ),
   # Corpo do App
   dashboardBody(
-    # 1 Linha 
-    fluidRow(
-      # 1 Box
-      box( # importando arquivo .fasta
-        fileInput("file", "Escolha um arquivo .fasta:",
-                  multiple = FALSE,
-                  accept = c(".fasta"))
+    #Colocar vários menus 
+    tabItems(
+      #Primeiro menu HOME
+      tabItem(
+        #Nome do menu desejado
+        tabName = "home",
+          # 1 Box
+          box( # importando arquivo .fasta
+            fileInput("file", "Escolha um arquivo .fasta:",
+                      multiple = FALSE,
+                      accept = c(".fasta"))
+          )
+          #-----------
+          
+        ),
+      # segundo menu HELP
+      tabItem(
+        tabName = "help"
       )
-      #-----------
-      
-    )
-    
-    
-    
+      )
   )
 )
 
