@@ -34,10 +34,10 @@ getwd()
 list.files()
 
 # Get a list of FASTA files in the directory
-(fasta_files <- list.files(pattern = '\\.fasta$'))
+(fasta_files <- list.files(path = "./Denise" , pattern = '\\.fasta$'))
 
 # Read the nucleotide sequences in FASTA format.
-sequences <- readAAStringSet(fasta_files)
+sequences <- Biostrings::readAAStringSet(paste0("Denise/",fasta_files))
 
 # Now, you need to ensure that all sequences have the same length
 # by determining the number of base pairs in each sequence and trimming 
