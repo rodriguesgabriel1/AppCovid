@@ -34,7 +34,12 @@ getwd()
 list.files()
 
 # Get a list of FASTA files in the directory
-(fasta_files <- list.files(pattern = '\\.fasta$'))
+
+setwd("./Denise")
+(fasta_files <- list.files(path="C:/Users/rodri/OneDrive/Ambiente de Trabalho/AppCovid/AppCovid/Denise" ,pattern = '\\.fasta$'))
+
+
+# (fasta_files <- list.files(pattern = '\\.fasta$'))
 
 # Read the nucleotide sequences in FASTA format.
 sequences <- readAAStringSet(fasta_files)
