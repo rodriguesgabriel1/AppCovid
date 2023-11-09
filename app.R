@@ -150,7 +150,7 @@ ui <- dashboardPage(
           status = "primary",
           solidHeader = TRUE,
           width = 6,
-          tags$img(src="Carlos.jpg", class = "img-circle",
+          tags$img(src="zarzar.png", class = "img-circle",
                    width = "200px", height = "200px"),
           
           #Usado para centralizar o que estiver dentro do box
@@ -295,7 +295,7 @@ ui <- dashboardPage(
           status = "primary",
             solidHeader = TRUE,
           h1("Apoio", style= "font-family: 'Times New Roman';
-           font-size: 40pt; text-align: center;"),
+           font-size: 40pt; text-align: center;font-weight: bold;"),
         
             #logo do Curso
           tags$img(src="logo_curso", class = "img-circle",
