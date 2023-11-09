@@ -5,6 +5,7 @@ library(shinydashboard) # Template shiny
 library(BiocManager) # Para utilizar um outro pacote Biostrings (Genético)
 library(kmer) # Função cluster k-mer
 library(factoextra) # Plot mais bonito do dendograma
+library(XVector) # Rodar func subseq()
 # Instalando Biostrings dentro do BiocManager
 # if (!require("BiocManager", quietly = TRUE))
 #   install.packages("BiocManager")
@@ -80,7 +81,7 @@ server <- function(input, output) {
     # Print the length of the shortest sequence
     (shortest_length <- min(lengths))
     # Trim sequences to the shortest length
-    trimmed_sequences <- subseq(sequences, end = shortest_length)
+    trimmed_sequences <- XVector::subseq(sequences, end = shortest_length)
     # Convert to a matrix for grouping
     seqs <- as.matrix(trimmed_sequences)
     # Generate clustering. Here, k=6, but you can experiment with other values of k.
